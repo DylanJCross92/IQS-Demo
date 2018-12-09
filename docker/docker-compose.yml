@@ -1,0 +1,3 @@
+iqs:
+  image: registry.icg360.net/iqs:${VERSION}
+  container_name: iqs

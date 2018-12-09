@@ -1,0 +1,9 @@
+giq:
+    build: ./
+    container_name: iqs
+    volumes:
+      - "../../../:/var/www"
+    ports:
+      - "8080:80"
+    environment:
+      - HOSTIP=192.168.65.1

@@ -1,0 +1,32 @@
+Listen *:${port}
+<VirtualHost *:${port}>
+	ServerAdmin devops@icg360.com
+	DocumentRoot /var/www
+	<Directory /var/www>
+		DirectoryIndex recallquote.html
+		Options FollowSymLinks MultiViews
+		AllowOverride All
+	</Directory>
+
+  <Location /iqs-admin>
+    Order deny,allow
+    deny from all
+    allow from 10.0.0.0/8
+    allow from 172.16.0.0/12
+    allow from 192.168.0.0/16
+  </Location>
+
+	<Files ".ht*">
+		Require all denied
+	</Files>
+
+	RewriteEngine On
+	RewriteCond %{QUERY_STRING} ^(.*)&amp;(.*)$
+	RewriteRule /propertyquote.html /propertyquote.html?%1&%2 [N]
+	RewriteCond %{QUERY_STRING} ^(.*)propertyzipcode=(.*)$
+	RewriteRule /propertyquote.html /propertyquote.html?%1zipcode=%2 [PT]
+
+	ErrorLog /var/log/iqs/iqs-error-web1.log
+	LogLevel warn
+	CustomLog /var/log/iqs/iqs-access-web1.log combined
+</VirtualHost>

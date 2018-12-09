@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="IQS" default="build_all" basedir="../../">
+
+
+    <!--  define some properties (variables)  -->
+    <tstamp>
+        <format pattern="%Y%m%d_%H%M%S" property="build.time"/>
+    </tstamp>
+
+    <!--edit these for each rev -->
+    <property name="vernum" value="1.8.11" />
+    <property name="vertype" value="dev"/>
+    <property name="ver" value="${vernum}_${vertype}_${build.time}" />
+    <property name="proj" value="${project.basedir}" />
+    <property name="iqsconf_filepath" value="/var/www/iqsConf.ini" />
+    <property name="iqsconf_dbhost" value="45.63.5.198" />
+    <property name="iqsconf_dbuser" value="sa" />
+    <property name="iqsconf_dbpass" value="password456." />
+    <property name="iqsconf_dbname" value="IQS" />
+    <property name="iqsconf_dbport" value="1433" />
+    <property name="iqsconf_dbdriver" value="ODBC Driver 11 for SQL Server" />
+    <property name="iqsconf_installtype" value="2" />
+    <property name="iqsconf_enckey" value="SecretKey1234567" />
+
+    <!-- TAPE Test tape_config.js values -->
+    <property name="tape_globalhost" value="http://localhost" />
+
+    <!-- IQS Admin init -->
+    <property name="iqs_admin_stormpathurl" value="https://api.stormpath.com/v1/applications/3tYKm4UTVNYOaKUctCN9mp" />
+    <property name="iqs_admin_hosturl" value="http://localhost" />
+    <property name="iqs_admin_baseurl" value=":8080/iqs-admin/public/" />
+    <property name="iqs_admin_iqspath" value="/Iqs/Iqs.php" />
+
+    <!-- IQS Admin Config -->
+    <property name="iqs_admin_name" value="Insurance Quoting Service Admin" />
+    <property name="iqs_admin_version" value="${ver}" />
+
+
+
+    <!-- database values -->
+    <property name="dbconfvalues_dev" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'filelogging', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'databaselogging', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'logfilepath', N'/var/log/iqs/iqslog.log')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'baseurl', N'https://services.stage.sagesure.com/cru-4/ezquote/api/ezquote/2/')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apiuid', N'e80000g')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apipw', N'8681b8e18988a004b9b014a97e0a07f5')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apialc', N'e80000g')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapiuid', N'giqtestuser')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapipw', N'giqtesting2014')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapialc', N'e80000t')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'ak', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'al', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'la', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'nj', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'ny', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'sc', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'tx', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'va', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'akho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'alho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'laho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'njho3mp', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'nyho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'nydp3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'scho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'scdp3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'txho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'vaho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'akho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'alho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'laho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'njho3mp', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'nyho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'nydp3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'scho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'scdp3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'txho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'vaho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'env', N'debug', N'true')" />
+
+    <property name="dbconfupdatevalues_dev" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')" />
+
+
+
+    <property name="dbconfvalues_geico" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'filelogging', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'databaselogging', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'logfilepath', N'/var/log/iqs/iqslog.log')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'baseurl', N'https://services.stage.sagesure.com/cru-4/ezquote/api/ezquote/2/')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apiuid', N'e80000g')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apipw', N'8681b8e18988a004b9b014a97e0a07f5')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apialc', N'e80000g')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapiuid', N'giqtestuser')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapipw', N'giqtesting2014')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapialc', N'e80000t')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'ak', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'nj', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'ny', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'sc', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'tx', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'va', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'akho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'njho3mp', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'nyho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'nydp3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'scho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'scdp3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'txho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'vaho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'akho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'njho3mp', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'nyho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'nydp3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'scho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'scdp3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'txho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'vaho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'env', N'debug', N'false')" />
+
+    <property name="dbconfupdatevalues_geico" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')" />
+
+    <property name="dbconfvalues_fnic" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'filelogging', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'databaselogging', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'logfilepath', N'/var/log/iqs/iqslog.log')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'baseurl', N'https://services.stage.sagesure.com/cru-4/ezquote/api/ezquote/2/')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apiuid', N'e80000g')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apipw', N'8681b8e18988a004b9b014a97e0a07f5')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apialc', N'e80000g')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapiuid', N'giqtestuser')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapipw', N'giqtesting2014')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapialc', N'e80000t')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'al', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'la', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'alho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'laho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'alho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'laho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'env', N'debug', N'false')" />
+
+    <property name="dbconfupdatevalues_fnic" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')" />
+
+    <property name="dbconfvalues_fednat" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'filelogging', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'databaselogging', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'logging', N'logfilepath', N'/var/log/iqs/iqslog.log')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'baseurl', N'https://services.stage.sagesure.com/cru-4/ezquote/api/ezquote/2/')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apiuid', N'g26100i')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apipw', N'jGFiA2S7Az')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'apialc', N'g26100i')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapiuid', N'giqtestuser')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapipw', N'giqtesting2014')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'debugapialc', N'e80000t')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'statesenabled', N'fl', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'productsenabled', N'flho3', N'true')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'whitelistenabled', N'flho3', N'false')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'env', N'debug', N'false')" />
+
+    <property name="dbconfupdatevalues_fednat" value=" INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrduid_ezaddresses', N'com.sagesure.apps.ezquote')${line.separator}
+INSERT [dbo].[Conf] ([ConfSection], [ConfElement], [ConfValue]) VALUES (N'ezquoteapi', N'methodovrdpw_ezaddresses', N'76a8bae2928fc36ca31f1257ab6d79e2')" />
+
+    <property name="dbblockcodevalues" value=" INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'110', N'location not covered all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'111', N'rental property unoccupied over 3 months all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'120', N'seasonal or secondary residence unoccupied over 3 months all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'121', N'location not covered', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'122', N'vacant property not a dp3 product all, except ny', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'123', N'full time student tenants all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'130', N'already has policy with occidental all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'210', N'current coverage a more than $2 million', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'211', N'more than 3 claims or has 2+ losses from the same peril all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'212', N'three family non-dp all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'213', N'four family non-dp all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'310', N'home built before 1900 all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'311', N'roof older than 50 years old all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'312', N'home has more than 3 additional features all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'313', N'in ground pool has no fence all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'314', N'in ground pool has a diving board or slide all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'315', N'above ground pool has a diving board or slide all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'316', N'above ground pool has an immovable ladder all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'317', N'dog on exclusion breed list all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'318', N'sq ft - over 10k all', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'319', N'wooden shingles tx', CURRENT_TIMESTAMP)${line.separator}
+INSERT [dbo].[BlockCodes] ([BlockCode], [BlockText], [DateTime]) VALUES (N'320', N'metal roof other than steel all', CURRENT_TIMESTAMP)${line.separator}" />
+
+
+
+    <!-- ============================================  -->
+    <!-- Target: configure_templates                          -->
+    <!-- ============================================  -->
+    <target name="configure_templates" >
+        <echo msg="Copying template files..." />
+
+
+        <!-- filePaths.ini Template -->
+        <copy file="${proj}/dev_Materials/templates/filePaths.ini" tofile="${proj}/Iqs/Conf/filePaths.ini" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="iqsconfpath" value="${iqsconf_filepath}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <!-- iqsConf.ini Template -->
+        <copy file="${proj}/dev_Materials/templates/iqsConf.ini" tofile="${proj}/iqsConf.ini" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbhost" value="${iqsconf_dbhost}" />
+                    <token key="dbuser" value="${iqsconf_dbuser}" />
+                    <token key="dbpass" value="${iqsconf_dbpass}" />
+                    <token key="dbname" value="${iqsconf_dbname}" />
+                    <token key="dbport" value="${iqsconf_dbport}" />
+                    <token key="dbdriver" value="${iqsconf_dbdriver}" />
+                    <token key="installtype" value="${iqsconf_installtype}" />
+                    <token key="enckey" value="${iqsconf_enckey}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <!-- Update the version information right in the api.php and the sql scripts file in the IQS app -->
+    <target name="update_version">
+        <reflexive file="${proj}/Iqs/api.php">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*iqsversion=.*" replace="$iqsversion=&quot;${ver}&quot;;" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <reflexive file="${proj}/dev_materials/templates/iqs_db.sql">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*iqsversion=.*" replace="/** iqsversion=&quot;${ver}&quot; **/" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <reflexive file="${proj}/dev_materials/templates/iqs_db_update.sql">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*iqsversion=.*" replace="/** iqsversion=&quot;${ver}&quot; **/" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <reflexive file="${proj}/VERSION.txt">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*version=.*" replace="version=${vernum}" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <reflexive file="${proj}/Iqs/VERSION">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*version=.*" replace="version=${ver}" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+    </target>
+
+    <!-- Update the DB script templates -->
+    <target name="update_db_templates">
+
+        <!-- dev -->
+        <copy file="${proj}/dev_Materials/templates/iqs_db.sql" tofile="${proj}/dev_Materials/sql_scripts/dev/dev_iqs_db_new.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfvalues" value="${dbconfvalues_dev}" />
+                    <token key="dbblockcodevalues" value="${dbblockcodevalues}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <copy file="${proj}/dev_Materials/templates/iqs_db_update.sql" tofile="${proj}/dev_Materials/sql_scripts/dev/dev_iqs_db_update.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfupdatevalues" value="${dbconfupdatevalues_dev}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <!-- fednat -->
+        <copy file="${proj}/dev_Materials/templates/iqs_db.sql" tofile="${proj}/dev_Materials/sql_scripts/fednat/fednat_iqs_db_new.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfvalues" value="${dbconfvalues_fednat}" />
+                    <token key="dbblockcodevalues" value="${dbblockcodevalues}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <copy file="${proj}/dev_Materials/templates/iqs_db_update.sql" tofile="${proj}/dev_Materials/sql_scripts/fednat/fednat_iqs_db_update.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfupdatevalues" value="${dbconfupdatevalues_fednat}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+
+        <!-- fnic -->
+        <copy file="${proj}/dev_Materials/templates/iqs_db.sql" tofile="${proj}/dev_Materials/sql_scripts/fnic/fnic_iqs_db_new.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfvalues" value="${dbconfvalues_fnic}" />
+                    <token key="dbblockcodevalues" value="${dbblockcodevalues}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <copy file="${proj}/dev_Materials/templates/iqs_db_update.sql" tofile="${proj}/dev_Materials/sql_scripts/fnic/fnic_iqs_db_update.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfupdatevalues" value="${dbconfupdatevalues_fnic}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <!-- geico -->
+        <copy file="${proj}/dev_Materials/templates/iqs_db.sql" tofile="${proj}/dev_Materials/sql_scripts/geico/geico_iqs_db_new.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfvalues" value="${dbconfvalues_geico}" />
+                    <token key="dbblockcodevalues" value="${dbblockcodevalues}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <copy file="${proj}/dev_Materials/templates/iqs_db_update.sql" tofile="${proj}/dev_Materials/sql_scripts/geico/geico_iqs_db_update.sql" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="dbconfupdatevalues" value="${dbconfupdatevalues_geico}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <!-- TAPE test tape_config.js Template -->
+    <target name="update_tape_config">
+        <copy file="${proj}/dev_Materials/templates/tape_config.js" tofile="${proj}/unit_tests/giq_tape/tape_config.js" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="tape_globalhost" value="${tape_globalhost}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <!-- IQS Admin init -->
+    <target name="update_iqs_admin_init">
+        <copy file="${proj}/dev_Materials/templates/init.php" tofile="${proj}/iqs-admin/app/init.php" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="iqs_admin_stormpathurl" value="${iqs_admin_stormpathurl}" />
+                    <token key="iqs_admin_hosturl" value="${iqs_admin_hosturl}" />
+                    <token key="iqs_admin_baseurl" value="${iqs_admin_baseurl}" />
+                    <token key="iqs_admin_iqspath" value="${iqs_admin_iqspath}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <!-- IQS Admin config -->
+    <target name="update_iqs_admin_config">
+        <copy file="${proj}/dev_Materials/templates/config.php" tofile="${proj}/iqs-admin/app/config.php" overwrite="true" >
+            <filterchain>
+                <replacetokens>
+                    <token key="iqs_admin_name" value="${iqs_admin_name}" />
+                    <token key="iqs_admin_version" value="${iqs_admin_version}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+
+    <!-- ============================================  -->
+    <!-- Target: build_all                             -->
+    <!-- ============================================  -->
+    <target name="build_all">
+        <phingcall target="configure_templates" />
+        <phingcall target="update_version" />
+        <phingcall target="update_db_templates" />
+        <phingcall target="update_tape_config" />
+        <phingcall target="update_iqs_admin_init" />
+        <phingcall target="update_iqs_admin_config" />
+    </target>
+
+</project>

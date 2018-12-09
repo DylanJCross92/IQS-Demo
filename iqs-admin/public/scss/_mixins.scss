@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,300italic);
+
+/*http://www.flatuicolorpicker.com/*/
+
+/* Grays */
+$porcelain: #ECF0F1;
+$light-gray: #f3f5f6;
+$iron: #DADFE1;
+$silver-sand: #BDC3C7;
+$cascade: #95A5A6;
+$lynch: #6C7A89;
+
+/* Blues */
+$madison: #2C3E50;
+$bluewood: #34495E;
+$picton: #22A7F0;
+
+/* Greens */
+$shamrock: #2ECC71;
+
+/* Reds */
+$flamingo: #EF4836;
+
+/* Yellows */
+$confetti: #e9d460;
+
+
+@-webkit-keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

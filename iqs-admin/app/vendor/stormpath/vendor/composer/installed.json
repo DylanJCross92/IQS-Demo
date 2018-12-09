@@ -1,0 +1,902 @@
+[
+    {
+        "name": "psr/cache",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/cache.git",
+            "reference": "9e66031f41fbbdda45ee11e93c45d480ccba3eb3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/cache/zipball/9e66031f41fbbdda45ee11e93c45d480ccba3eb3",
+            "reference": "9e66031f41fbbdda45ee11e93c45d480ccba3eb3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-12-11 02:52:07",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Cache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for caching libraries",
+        "keywords": [
+            "cache",
+            "psr",
+            "psr-6"
+        ]
+    },
+    {
+        "name": "cache/taggable-cache",
+        "version": "0.4.0",
+        "version_normalized": "0.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/taggable-cache.git",
+            "reference": "ad9276e372043e17aa386d63e85272c35b2ebfe7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/taggable-cache/zipball/ad9276e372043e17aa386d63e85272c35b2ebfe7",
+            "reference": "ad9276e372043e17aa386d63e85272c35b2ebfe7",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0"
+        },
+        "require-dev": {
+            "cache/integration-tests": "^0.9",
+            "phpunit/phpunit": "^4.1|^5.1"
+        },
+        "time": "2016-02-28 16:35:05",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Taggable\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "Add tag support to your PSR-6 cache implementation",
+        "homepage": "https://github.com/php-cache/taggable-cache",
+        "keywords": [
+            "Taggable",
+            "cache",
+            "psr6",
+            "tag"
+        ]
+    },
+    {
+        "name": "cache/hierarchical-cache",
+        "version": "0.2.1",
+        "version_normalized": "0.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/hierarchical-cache.git",
+            "reference": "9f7359e7af53005396d1b75c677683fa1ee42379"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/hierarchical-cache/zipball/9f7359e7af53005396d1b75c677683fa1ee42379",
+            "reference": "9f7359e7af53005396d1b75c677683fa1ee42379",
+            "shasum": ""
+        },
+        "require": {
+            "cache/taggable-cache": "^0.4",
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0"
+        },
+        "require-dev": {
+            "cache/array-adapter": "@stable",
+            "cache/integration-tests": "^0.9",
+            "phpunit/phpunit": "^4.0|^5.1"
+        },
+        "time": "2016-02-25 08:03:59",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Hierarchy\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "A helper trait and interface to your PSR-6 cache to support hierarchical keys.",
+        "homepage": "https://github.com/php-cache/hierarchical-cache",
+        "keywords": [
+            "cache",
+            "hierarchical",
+            "psr-6",
+            "tag"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "shasum": ""
+        },
+        "time": "2012-12-21 11:40:51",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Psr\\Log\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "cache/adapter-common",
+        "version": "0.3.2",
+        "version_normalized": "0.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/adapter-common.git",
+            "reference": "102efa3206703cc6e3f6c1cc090c17a9b126b01a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/adapter-common/zipball/102efa3206703cc6e3f6c1cc090c17a9b126b01a",
+            "reference": "102efa3206703cc6e3f6c1cc090c17a9b126b01a",
+            "shasum": ""
+        },
+        "require": {
+            "cache/taggable-cache": "^0.4",
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0",
+            "psr/log": "^1.0"
+        },
+        "require-dev": {
+            "cache/integration-tests": "^0.10",
+            "phpunit/phpunit": "^4.0|^5.1"
+        },
+        "time": "2016-04-24 09:30:42",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Adapter\\Common\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "Common classes for PSR-6 adapters",
+        "homepage": "http://www.php-cache.com/en/latest/",
+        "keywords": [
+            "cache",
+            "psr-6",
+            "tag"
+        ]
+    },
+    {
+        "name": "cache/void-adapter",
+        "version": "0.3.0",
+        "version_normalized": "0.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/void-adapter.git",
+            "reference": "c0cdf3a6c90b1df502e140db257109d8e600a790"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/void-adapter/zipball/c0cdf3a6c90b1df502e140db257109d8e600a790",
+            "reference": "c0cdf3a6c90b1df502e140db257109d8e600a790",
+            "shasum": ""
+        },
+        "require": {
+            "cache/adapter-common": "^0.3",
+            "cache/hierarchical-cache": "^0.2.1",
+            "cache/taggable-cache": "^0.4",
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0"
+        },
+        "provide": {
+            "psr/cache-implementation": "^1.0"
+        },
+        "require-dev": {
+            "cache/integration-tests": "^0.9",
+            "phpunit/phpunit": "^4.0|^5.1"
+        },
+        "time": "2016-02-28 17:57:49",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Adapter\\Void\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "A PSR-6 cache implementation using Void. This implementation supports tags",
+        "homepage": "http://www.php-cache.com/en/latest/",
+        "keywords": [
+            "cache",
+            "psr-6",
+            "tag",
+            "void"
+        ]
+    },
+    {
+        "name": "cache/array-adapter",
+        "version": "0.4.0",
+        "version_normalized": "0.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/array-adapter.git",
+            "reference": "00d0c8187f61151837b5e4dbb8b24c8870050301"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/array-adapter/zipball/00d0c8187f61151837b5e4dbb8b24c8870050301",
+            "reference": "00d0c8187f61151837b5e4dbb8b24c8870050301",
+            "shasum": ""
+        },
+        "require": {
+            "cache/adapter-common": "^0.3",
+            "cache/hierarchical-cache": "^0.2",
+            "cache/taggable-cache": "^0.4",
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0"
+        },
+        "provide": {
+            "psr/cache-implementation": "^1.0"
+        },
+        "require-dev": {
+            "cache/integration-tests": "^0.9",
+            "phpunit/phpunit": "^4.0|^5.1"
+        },
+        "time": "2016-02-25 08:03:59",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Adapter\\PHPArray\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "A PSR-6 cache implementation using a php array. This implementation supports tags",
+        "homepage": "https://github.com/php-cache/array-adapter",
+        "keywords": [
+            "array",
+            "cache",
+            "psr-6",
+            "tag"
+        ]
+    },
+    {
+        "name": "cache/memcached-adapter",
+        "version": "0.3.1",
+        "version_normalized": "0.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/memcached-adapter.git",
+            "reference": "e6c569e9674e184f39c16beb9eb2f39c0b914138"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/memcached-adapter/zipball/e6c569e9674e184f39c16beb9eb2f39c0b914138",
+            "reference": "e6c569e9674e184f39c16beb9eb2f39c0b914138",
+            "shasum": ""
+        },
+        "require": {
+            "cache/adapter-common": "^0.3",
+            "cache/hierarchical-cache": "^0.2",
+            "cache/taggable-cache": "^0.4",
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0"
+        },
+        "provide": {
+            "psr/cache-implementation": "^1.0"
+        },
+        "require-dev": {
+            "cache/integration-tests": "^0.9",
+            "phpunit/phpunit": "^4.0|^5.1"
+        },
+        "suggest": {
+            "ext-memcached": "The extension required to use this pool."
+        },
+        "time": "2016-03-01 21:01:28",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Adapter\\Memcached\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "A PSR-6 cache implementation using Memcached. This implementation supports tags",
+        "homepage": "http://www.php-cache.com/en/latest/",
+        "keywords": [
+            "cache",
+            "memcached",
+            "psr-6",
+            "tag"
+        ]
+    },
+    {
+        "name": "cache/redis-adapter",
+        "version": "0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-cache/redis-adapter.git",
+            "reference": "bdd959080d1627f8ed35fe5feafa8a05160ecf52"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-cache/redis-adapter/zipball/bdd959080d1627f8ed35fe5feafa8a05160ecf52",
+            "reference": "bdd959080d1627f8ed35fe5feafa8a05160ecf52",
+            "shasum": ""
+        },
+        "require": {
+            "cache/adapter-common": "^0.3",
+            "cache/hierarchical-cache": "^0.2",
+            "cache/taggable-cache": "^0.4",
+            "php": "^5.5|^7.0",
+            "psr/cache": "^1.0"
+        },
+        "provide": {
+            "psr/cache-implementation": "^1.0"
+        },
+        "require-dev": {
+            "cache/integration-tests": "^0.9",
+            "phpunit/phpunit": "^4.0|^5.1"
+        },
+        "suggest": {
+            "ext-redis": "The extension required to use this pool."
+        },
+        "time": "2016-03-01 21:01:28",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cache\\Adapter\\Redis\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Scherer",
+                "email": "aequasi@gmail.com",
+                "homepage": "https://github.com/aequasi"
+            },
+            {
+                "name": "Tobias Nyholm",
+                "email": "tobias.nyholm@gmail.com",
+                "homepage": "https://github.com/nyholm"
+            }
+        ],
+        "description": "A PSR-6 cache implementation using Redis (PhpRedis). This implementation supports tags",
+        "homepage": "http://www.php-cache.com/en/latest/",
+        "keywords": [
+            "cache",
+            "phpredis",
+            "psr-6",
+            "redis",
+            "tag"
+        ]
+    },
+    {
+        "name": "phpseclib/phpseclib",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpseclib/phpseclib.git",
+            "reference": "3d265f7c079f5b37d33475f996d7a383c5fc8aeb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/3d265f7c079f5b37d33475f996d7a383c5fc8aeb",
+            "reference": "3d265f7c079f5b37d33475f996d7a383c5fc8aeb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phing/phing": "~2.7",
+            "phpunit/phpunit": "~4.0",
+            "sami/sami": "~2.0",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "suggest": {
+            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+            "ext-libsodium": "SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.",
+            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
+            "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
+        },
+        "time": "2016-05-13 01:15:21",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "phpseclib/bootstrap.php"
+            ],
+            "psr-4": {
+                "phpseclib\\": "phpseclib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jim Wigginton",
+                "email": "terrafrost@php.net",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Patrick Monnerat",
+                "email": "pm@datasphere.ch",
+                "role": "Developer"
+            },
+            {
+                "name": "Andreas Fischer",
+                "email": "bantu@phpbb.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Hans-Jürgen Petrich",
+                "email": "petrich@tronic-media.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Graham Campbell",
+                "email": "graham@alt-three.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+        "homepage": "http://phpseclib.sourceforge.net",
+        "keywords": [
+            "BigInteger",
+            "aes",
+            "asn.1",
+            "asn1",
+            "blowfish",
+            "crypto",
+            "cryptography",
+            "encryption",
+            "rsa",
+            "security",
+            "sftp",
+            "signature",
+            "signing",
+            "ssh",
+            "twofish",
+            "x.509",
+            "x509"
+        ]
+    },
+    {
+        "name": "firebase/php-jwt",
+        "version": "v2.2.0",
+        "version_normalized": "2.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/firebase/php-jwt.git",
+            "reference": "e0a75bfb6413f22092c99b70f310ccb2cca3efa5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/firebase/php-jwt/zipball/e0a75bfb6413f22092c99b70f310ccb2cca3efa5",
+            "reference": "e0a75bfb6413f22092c99b70f310ccb2cca3efa5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "time": "2015-06-22 23:26:39",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "Authentication/",
+                "Exceptions/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Neuman Vong",
+                "email": "neuman+pear@twilio.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anant Narayanan",
+                "email": "anant@php.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+        "homepage": "https://github.com/firebase/php-jwt"
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "v2.8.8",
+        "version_normalized": "2.8.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/event-dispatcher.git",
+            "reference": "b180b70439dca70049b6b9b7e21d75e6e5d7aca9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b180b70439dca70049b6b9b7e21d75e6e5d7aca9",
+            "reference": "b180b70439dca70049b6b9b7e21d75e6e5d7aca9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.0,>=2.0.5|~3.0.0",
+            "symfony/dependency-injection": "~2.6|~3.0.0",
+            "symfony/expression-language": "~2.6|~3.0.0",
+            "symfony/stopwatch": "~2.3|~3.0.0"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2016-06-29 05:29:29",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "guzzle/guzzle",
+        "version": "v3.9.3",
+        "version_normalized": "3.9.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle3.git",
+            "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
+            "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.3",
+            "symfony/event-dispatcher": "~2.1"
+        },
+        "replace": {
+            "guzzle/batch": "self.version",
+            "guzzle/cache": "self.version",
+            "guzzle/common": "self.version",
+            "guzzle/http": "self.version",
+            "guzzle/inflection": "self.version",
+            "guzzle/iterator": "self.version",
+            "guzzle/log": "self.version",
+            "guzzle/parser": "self.version",
+            "guzzle/plugin": "self.version",
+            "guzzle/plugin-async": "self.version",
+            "guzzle/plugin-backoff": "self.version",
+            "guzzle/plugin-cache": "self.version",
+            "guzzle/plugin-cookie": "self.version",
+            "guzzle/plugin-curlauth": "self.version",
+            "guzzle/plugin-error-response": "self.version",
+            "guzzle/plugin-history": "self.version",
+            "guzzle/plugin-log": "self.version",
+            "guzzle/plugin-md5": "self.version",
+            "guzzle/plugin-mock": "self.version",
+            "guzzle/plugin-oauth": "self.version",
+            "guzzle/service": "self.version",
+            "guzzle/stream": "self.version"
+        },
+        "require-dev": {
+            "doctrine/cache": "~1.3",
+            "monolog/monolog": "~1.0",
+            "phpunit/phpunit": "3.7.*",
+            "psr/log": "~1.0",
+            "symfony/class-loader": "~2.1",
+            "zendframework/zend-cache": "2.*,<2.3",
+            "zendframework/zend-log": "2.*,<2.3"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
+        },
+        "time": "2015-03-18 18:23:50",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.9-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle": "src/",
+                "Guzzle\\Tests": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Guzzle Community",
+                "homepage": "https://github.com/guzzle/guzzle/contributors"
+            }
+        ],
+        "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ],
+        "abandoned": "guzzlehttp/guzzle"
+    },
+    {
+        "name": "stormpath/sdk",
+        "version": "1.15.0",
+        "version_normalized": "1.15.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stormpath/stormpath-sdk-php.git",
+            "reference": "28807c0ca40ce28a9c4932f38660f40ffc9a379e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stormpath/stormpath-sdk-php/zipball/28807c0ca40ce28a9c4932f38660f40ffc9a379e",
+            "reference": "28807c0ca40ce28a9c4932f38660f40ffc9a379e",
+            "shasum": ""
+        },
+        "require": {
+            "cache/array-adapter": "0.4.*",
+            "cache/memcached-adapter": "0.3.*",
+            "cache/redis-adapter": "0.4.*",
+            "cache/taggable-cache": "0.4.*",
+            "cache/void-adapter": "0.3.*",
+            "firebase/php-jwt": "2.2.*",
+            "guzzle/guzzle": "3.9.*",
+            "php": ">=5.5",
+            "phpseclib/phpseclib": "0.3.*|~1.0|~2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*",
+            "symfony/debug": "*",
+            "symfony/var-dumper": "*"
+        },
+        "time": "2016-06-14 23:05:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Stormpath\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Elder Crisostomo",
+                "email": "elder@stormpath.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Brian Retterer",
+                "email": "brian@stormpath.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A PHP wrapper for Stormpath's API",
+        "homepage": "https://github.com/stormpath/stormpath-sdk-php",
+        "keywords": [
+            "Authentication",
+            "User management",
+            "api",
+            "cloud",
+            "group management",
+            "security",
+            "stormpath",
+            "user security"
+        ]
+    }
+]

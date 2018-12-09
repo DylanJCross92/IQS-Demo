@@ -1,0 +1,35 @@
+
+20671 Mountain Vista Dr
+Anchorage, AK
+99577
+
+99 Hooper Ave
+Staten Island, NY
+10306
+http://192.168.99.100/propertyquote.html?zipcode=10306
+
+7266 Stokes Dr
+Hayes, VA
+23072
+
+2228 East Grace Street
+Richmond, VA
+23220
+
+2312 Monument Ave
+Richmond, VA
+23220
+
+2872 Ragusa Ln
+League City, TX
+77573
+
+206 Spring Island Dr
+Okatie, SC
+29909
+
+Vagrant Test Server IP Address: 192.168.56.101
+
+192.168.56.101/propertyquote.html?zipcode=99577
+http://localhost:8080/propertyquote.html?zipcode=99577
+

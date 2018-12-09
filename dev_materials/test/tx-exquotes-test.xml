@@ -1,0 +1,38 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list />
+  </option>
+  <option name="httpMethod" value="POST" />
+  <option name="urlBase" value="https://services.stage.sagesure.com" />
+  <option name="urlPath" value="/cru-4/ezquote/api/ezquote/1/ezquotes" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Authorization" />
+        <option name="value" value="Bearer R0lRVGVzdFVzZXI6Z2lxdGVzdGluZzIwMTQ=" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Content-Type" />
+        <option name="value" value="application/json" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="" />
+        <option name="value" value="" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="true" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="{&quot;User&quot;:&quot;giqtestuser&quot;,&quot;AgencyLocationCode&quot;:&quot;e80000t&quot;,&quot;Latitude&quot;:&quot;29.508905&quot;,&quot;Longitude&quot;:&quot;-95.054096&quot;,&quot;PropertyStreetName&quot;:&quot;Ragusa Ln&quot;,&quot;PropertyCity&quot;:&quot;League City&quot;,&quot;PropertyZipCode&quot;:&quot;77573&quot;,&quot;PropertyZipCodePlusFour&quot;:&quot;6129&quot;,&quot;Vendor01GeoResult&quot;:&quot;S5HPNTSCZA&quot;,&quot;PropertyStreetNumber&quot;:&quot;2872&quot;,&quot;PropertyState&quot;:&quot;TX&quot;,&quot;Country&quot;:&quot;&quot;,&quot;DistanceToCoastSecondaryRetrieved&quot;:&quot;3.2&quot;,&quot;RespondingFireDistrict&quot;:&quot;League City&quot;,&quot;RespondingFireDistrictRetrieved&quot;:&quot;League City&quot;,&quot;RespondingFireDistrictType&quot;:&quot;200&quot;,&quot;SquareFootUnderRoofFLA&quot;:&quot;5266&quot;,&quot;NumberOfFullBathsRetrieved&quot;:&quot;3&quot;,&quot;DistanceToFireDepartmentRetrieved&quot;:&quot;2.08&quot;,&quot;LongitudeRMS&quot;:&quot;&quot;,&quot;PropertyWildFireRiskLevel&quot;:&quot;1&quot;,&quot;DistanceToFireDepartment&quot;:&quot;2.08&quot;,&quot;AddressValidated&quot;:&quot;100&quot;,&quot;WindPoolTier&quot;:&quot;1&quot;,&quot;LongitudeRetrieved&quot;:&quot;-95.054096&quot;,&quot;DistanceToCoastSecondary&quot;:&quot;3.2&quot;,&quot;NearestHighOrVeryHighRiskLevel&quot;:&quot;-1&quot;,&quot;PreburnRiskDescription&quot;:&quot;N\/A&quot;,&quot;LandUseDensityClass&quot;:&quot;Medium Density Residential&quot;,&quot;GeocodeMatchLevel&quot;:&quot;&quot;,&quot;PropertyWildFireRiskDescription&quot;:&quot;Urban&quot;,&quot;WindPoolTierRetrieved&quot;:&quot;1&quot;,&quot;DistanceToPrimaryBrushFireZone&quot;:&quot;.81&quot;,&quot;ConstructionYearRetrieved&quot;:&quot;2014&quot;,&quot;SquareFootUnderRoofRetrieved&quot;:&quot;5266&quot;,&quot;DistanceToCoastRetrieved&quot;:&quot;3.2&quot;,&quot;NumberOfHalfBaths&quot;:&quot;&quot;,&quot;ProtectionClassSplitA&quot;:&quot;3&quot;,&quot;RFDIDRetrieved&quot;:&quot;RM481671340&quot;,&quot;ProtectionClassSplitB&quot;:&quot;10&quot;,&quot;ConstructionYear&quot;:&quot;2014&quot;,&quot;GeoMatchLevelRMS&quot;:&quot;&quot;,&quot;DistanceWildlandFeet&quot;:&quot;4279&quot;,&quot;PropertyWildFireRiskScore&quot;:&quot;6&quot;,&quot;NumberOfStories&quot;:&quot;&quot;,&quot;NumberOfStoriesRetrieved&quot;:&quot;&quot;,&quot;LandUseDensityLevel&quot;:&quot;3&quot;,&quot;LatitudeRMS&quot;:&quot;&quot;,&quot;PropertyCounty&quot;:&quot;Galveston&quot;,&quot;NumberOfFullBaths&quot;:&quot;3&quot;,&quot;ProtectionClass&quot;:&quot;3&quot;,&quot;RespondingFireDistrictTypeRetrieved&quot;:&quot;200&quot;,&quot;LatitudeRetrieved&quot;:&quot;29.508905&quot;,&quot;NumberOfHalfBathsRetrieved&quot;:&quot;&quot;,&quot;DistanceHighOrVeryHighRiskFeet&quot;:&quot;-1&quot;,&quot;DistanceToCoast&quot;:&quot;3.2&quot;,&quot;AddressId&quot;:&quot;0&quot;,&quot;Insurance_Product&quot;:&quot;HO3&quot;,&quot;InsuredByCorporation&quot;:&quot;200&quot;}" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>

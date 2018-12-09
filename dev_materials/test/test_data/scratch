@@ -1,0 +1,7 @@
+var Product_State = "AK";
+var Feid = "GIQ"+Product_State;
+var Insurance_Product = "HO3";
+var QuoteIDPrefix = "CRU4Q-";
+var sessionTimeOutLength = 12 * 60;
+var serviceUrl = "../../../Iqs/api.php/";
+var PixelTrackingBaseURL = "https://www2-test.geico.com/vs/track.js";

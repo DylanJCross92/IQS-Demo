@@ -1,0 +1,157 @@
+<h1 id="dompdf">Dompdf</h1>
+<p><a href="https://travis-ci.org/dompdf/dompdf"><img src="https://travis-ci.org/dompdf/dompdf.png?branch=master" alt="Build Status"></a>
+<a href="https://packagist.org/packages/dompdf/dompdf"><img src="https://poser.pugx.org/dompdf/dompdf/v/stable.png" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/dompdf/dompdf"><img src="https://poser.pugx.org/dompdf/dompdf/downloads.png" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/dompdf/dompdf"><img src="https://poser.pugx.org/dompdf/dompdf/v/unstable.png" alt="Latest Unstable Version"></a>
+<a href="https://packagist.org/packages/dompdf/dompdf"><img src="https://poser.pugx.org/dompdf/dompdf/license.png" alt="License"></a></p>
+<p><strong>Dompdf is an HTML to PDF converter</strong></p>
+<p>At its heart, dompdf is (mostly) a <a href="http://www.w3.org/TR/CSS2/">CSS 2.1</a> compliant
+HTML layout and rendering engine written in PHP. It is a style-driven renderer:
+it will download and read external stylesheets, inline style tags, and the style
+attributes of individual HTML elements. It also supports most presentational
+HTML attributes.</p>
+<p><em>This document applies to the latest stable code which may not reflect the current 
+release. For released code please
+<a href="https://github.com/dompdf/dompdf/tags">navigate to the approrpiate tag</a>.</em></p>
+<hr>
+<p><strong>Check out the <a href="http://pxd.me/dompdf/www/examples.php">demo</a> and ask any
+question on <a href="http://stackoverflow.com/questions/tagged/dompdf">StackOverflow</a> or
+on the <a href="http://groups.google.com/group/dompdf">Google Groups</a>.</strong></p>
+<p>Follow us on <a href="http://www.twitter.com/dompdf"><img src="http://twitter-badges.s3.amazonaws.com/twitter-a.png" alt="Twitter"></a> or 
+<a href="https://plus.google.com/108710008521858993320?prsrc=3"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="Follow us on Google+"></a>.</p>
+<hr>
+<h2 id="features">Features</h2>
+<ul>
+<li>Handles most CSS 2.1 and a few CSS3 properties, including @import, @media &amp;
+@page rules</li>
+<li>Supports most presentational HTML 4.0 attributes</li>
+<li>Supports external stylesheets, either local or through http/ftp (via
+fopen-wrappers)</li>
+<li>Supports complex tables, including row &amp; column spans, separate &amp; collapsed
+border models, individual cell styling</li>
+<li>Image support (gif, png (8, 24 and 32 bit with alpha channel), bmp &amp; jpeg)</li>
+<li>No dependencies on external PDF libraries, thanks to the R&amp;OS PDF class</li>
+<li>Inline PHP support</li>
+<li>Basic SVG support</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>PHP version 5.3.0 or higher</li>
+<li>DOM extension</li>
+<li>GD extension</li>
+<li>MBString extension</li>
+<li>php-font-lib</li>
+<li>php-svg-lib</li>
+</ul>
+<h3 id="recommendations">Recommendations</h3>
+<ul>
+<li>OPcache (OPcache, XCache, APC, etc.): improves performance</li>
+<li>IMagick or GMagick extension: improves image processing performance</li>
+</ul>
+<p>Visit the wiki for more information:
+<a href="https://github.com/dompdf/dompdf/wiki/Requirements">https://github.com/dompdf/dompdf/wiki/Requirements</a></p>
+<h2 id="about-fonts-character-encoding">About Fonts &amp; Character Encoding</h2>
+<p>PDF documents internally support the following fonts: Helvetica, Times-Roman,
+Courier, Zapf-Dingbats, &amp; Symbol. These fonts only support Windows ANSI
+encoding. In order for a PDF to display characters that are not available in
+Windows ANSI you must supply an external font. Dompdf will embed any referenced
+font in the PDF so long as it has been pre-loaded or is accessible to dompdf and
+reference in CSS @font-face rules. See the
+<a href="https://github.com/dompdf/dompdf/wiki/About-Fonts-and-Character-Encoding">font overview</a>
+for more information on how to use fonts.</p>
+<p>The <a href="http://dejavu-fonts.org">DejaVu TrueType fonts</a> have been pre-installed
+to give dompdf decent Unicode character coverage by default. To use the DejaVu
+fonts reference the font in your stylesheet, e.g. <code>body { font-family: DejaVu
+Sans; }</code> (for DejaVu Sans). The following DejaVu 2.34 fonts are available:
+DejaVu Sans, DejaVu Serif, and DejaVu Sans Mono.</p>
+<h2 id="easy-installation">Easy Installation</h2>
+<h3 id="install-with-composer">Install with composer</h3>
+<p>To install with <a href="https://getcomposer.org/">Composer</a>, simply require the
+latest version of this package.</p>
+<pre><code class="lang-bash">composer require dompdf/dompdf
+</code></pre>
+<p>Make sure that the autoload file from Composer is loaded.</p>
+<pre><code class="lang-php">// somewhere early in your project&#39;s loading, require the Composer autoloader
+// see: http://getcomposer.org/doc/00-intro.md
+require &#39;vendor/autoload.php&#39;;
+</code></pre>
+<h3 id="download-and-install">Download and install</h3>
+<p>Download an archive of dompdf and extract it into the directory where dompdf
+will reside</p>
+<ul>
+<li>You can download stable copies of dompdf from
+<a href="https://github.com/dompdf/dompdf/releases">https://github.com/dompdf/dompdf/releases</a></li>
+<li>Or download a nightly (the latest, unreleased code) from
+<a href="http://eclecticgeek.com/dompdf">http://eclecticgeek.com/dompdf</a></li>
+</ul>
+<p>Require dompdf, libraries, and helper functions in your PHP:</p>
+<pre><code class="lang-php">// include autoloader
+require_once &#39;dompdf/autoload.inc.php&#39;;
+</code></pre>
+<h3 id="install-with-git">Install with git</h3>
+<p>From the command line, switch to the directory where dompdf will reside and run
+the following commands:</p>
+<pre><code class="lang-sh">git clone https://github.com/dompdf/dompdf.git
+cd dompdf
+
+git clone https://github.com/PhenX/php-font-lib.git lib/php-font-lib
+cd lib/php-font-lib
+git checkout 0.4
+cd ..
+
+git clone https://github.com/PhenX/php-svg-lib.git php-svg-lib
+cd php-svg-lib
+git checkout v0.1
+</code></pre>
+<p>Require dompdf, libraries, and helper functions in your PHP:</p>
+<pre><code class="lang-php">// include autoloader
+require_once &#39;dompdf/autoload.inc.php&#39;;
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<p>Just pass your HTML in to dompdf and stream the output:</p>
+<pre><code class="lang-php">// reference the Dompdf namespace
+use Dompdf\Dompdf;
+
+// instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf-&gt;loadHtml(&#39;hello world&#39;);
+
+// (Optional) Setup the paper size and orientation
+$dompdf-&gt;setPaper(&#39;A4&#39;, &#39;landscape&#39;);
+
+// Render the HTML as PDF
+$dompdf-&gt;render();
+
+// Output the generated PDF to Browser
+$dompdf-&gt;stream();
+</code></pre>
+<h3 id="setting-options">Setting Options</h3>
+<p>Set options during dompdf instantiation:</p>
+<pre><code class="lang-php">use Dompdf\Dompdf;
+use Dompdf\Options;
+
+$options = new Options();
+$options-&gt;set(&#39;defaultFont&#39;, &#39;Courier&#39;);
+$dompdf = new Dompdf($options);
+</code></pre>
+<p>or at run time</p>
+<pre><code class="lang-php">use Dompdf\Dompdf;
+
+$dompdf = new Dompdf();
+$dompdf-&gt;set_option(&#39;defaultFont&#39;, &#39;Courier&#39;);
+</code></pre>
+<p>See <a href="src/Options.php">Dompdf\Options</a> for a list of available options.</p>
+<h2 id="limitations-known-issues-">Limitations (Known Issues)</h2>
+<ul>
+<li>Dompdf is not particularly tolerant to poorly-formed HTML input. To avoid
+any unexpected rendering issues you should either enable the built-in HTML5
+parser at runtime (<code>$dompdf-&gt;set_option(&#39;isHtml5ParserEnabled&#39;, true);</code>) 
+or run your HTML through a HTML validator/cleaner (such as
+<a href="http://tidy.sourceforge.net">Tidy</a> or the
+<a href="http://validator.w3.org">W3C Markup Validation Service</a>).</li>
+<li>Large files or large tables can take a while to render.</li>
+<li>CSS float is in development and may not produce the desired result</li>
+</ul>
+<hr>
+<p><a href="http://goo.gl/DSvWf"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" alt="Donate button"></a></p>
+<p><em>If you find this project useful, please consider making a donation. Any funds donated will be used to help further development on this project.)</em></p>

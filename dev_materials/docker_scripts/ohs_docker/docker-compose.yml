@@ -1,0 +1,9 @@
+iqs:
+    build: ./
+    container_name: IQS
+    volumes:
+      - "../../../:/var/www"
+    ports:
+      - "8080:80"
+    environment:
+      - HOSTIP=10.0.75.1

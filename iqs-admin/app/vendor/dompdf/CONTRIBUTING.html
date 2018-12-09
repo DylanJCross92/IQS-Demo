@@ -1,0 +1,63 @@
+<h1 id="how-to-contribute">How to contribute</h1>
+<ul>
+<li><a href="#getting-help">Getting help</a></li>
+<li><a href="#submitting-bug-reports">Submitting bug reports</a></li>
+<li><a href="#contributing-code">Contributing code</a></li>
+</ul>
+<h2 id="getting-help">Getting help</h2>
+<p>Community discussion, questions, and informal bug reporting is done on the
+<a href="http://groups.google.com/group/dompdf">dompdf Google group</a>. You may also 
+seek help on
+<a href="http://stackoverflow.com/questions/tagged/dompdf">StackOverflow</a>.</p>
+<h2 id="submitting-bug-reports">Submitting bug reports</h2>
+<p>The preferred way to report bugs is to use the
+<a href="http://github.com/dompdf/dompdf/issues">GitHub issue tracker</a>. Before 
+reporting a bug, read these pointers.</p>
+<p><strong>Please search inside the bug tracker to see if the bug you found is not already reported.</strong></p>
+<p><strong>Note:</strong> The issue tracker is for <em>bugs</em> and <em>feature requests</em>, not requests for help.
+Questions should be asked on the
+<a href="http://groups.google.com/group/dompdf">dompdf Google group</a> instead.</p>
+<h3 id="reporting-bugs-effectively">Reporting bugs effectively</h3>
+<ul>
+<li><p>dompdf is maintained by volunteers. They don&#39;t owe you anything, so be
+polite. Reports with an indignant or belligerent tone tend to be moved to the
+bottom of the pile.</p>
+</li>
+<li><p>Include information about <strong>the PHP version on which the problem occurred</strong>. Even
+if you tested several PHP version on different servers, and the problem occurred
+in all of them, mention this fact in the bug report.
+Also include the operating system it&#39;s installed on. PHP configuration can also help,
+and server error logs (like Apache logs)</p>
+</li>
+<li><p>Mention which release of dompdf you&#39;re using (the zip, the master branch, etc).
+Preferably, try also with the current development snapshot, to ensure the
+problem has not already been fixed.</p>
+</li>
+<li><p>Mention very precisely what went wrong. &quot;X is broken&quot; is not a good bug
+report. What did you expect to happen? What happened instead? Describe the
+exact steps a maintainer has to take to make the problem occur. We can not
+fix something that we can not observe.</p>
+</li>
+<li><p>If the problem can not be reproduced in any of the demos included in the
+dompdf distribution, please provide an HTML document that demonstrates
+the problem. There are a few options to show us your code:</p>
+<ul>
+<li><a href="http://jsfiddle.net/">JS Fiddle</a></li>
+<li><a href="http://eclecticgeek.com/dompdf/debug.php">dompdf debug helper</a> (provided by @bsweeney)</li>
+<li>Include the HTML/CSS inside the bug report, with
+<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-code">code highlighting</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="contributing-code">Contributing code</h2>
+<ul>
+<li>Make sure you have a <a href="https://github.com/signup/free">GitHub Account</a></li>
+<li>Fork <a href="https://github.com/dompdf/dompdf/">dompdf</a>
+(<a href="https://help.github.com/articles/fork-a-repo">how to fork a repo</a>)</li>
+<li><em>Make your changes on the dev branch</em> or the most appropriate feature branch. Please only patch 
+the master branch if you are attempting to address an urgent bug in the released code.</li>
+<li>Add a simple test file in <code>www/test/</code>, with a comprehensive name.</li>
+<li>Add a unit test in the <code>test/Dompdf/Tests/</code> directory.</li>
+<li>Submit a pull request
+(<a href="https://help.github.com/articles/fork-a-repo">how to create a pull request</a>)</li>
+</ul>

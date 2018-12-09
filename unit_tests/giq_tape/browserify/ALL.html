@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script>
+        var scriptnum=0;
+        var scripts = ['ak_test.js',
+                'ny_test.js',
+                'ny_dp3_test.js',
+                'sc_test.js',
+                'sc_dp3_test.js',
+                'tx_test.js',
+                'va_test.js'];
+        function loadStates(){
+            var script = document.createElement('script');
+            script.src = scripts[scriptnum];
+            document.head.appendChild(script);
+
+            scriptnum++;
+            document.getElementById('statelink').innerHTML = "Test "+scripts[scriptnum];
+        }
+    </script>
+</head>
+<body>
+<a href="#" id="statelink" onclick="loadStates()">Test ak_test.js</a>
+</body>
+</html>
+
